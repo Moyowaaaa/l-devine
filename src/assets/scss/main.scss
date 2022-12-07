@@ -1,0 +1,66 @@
+// ABSTRACT IMPORT
+@import "abstract/variables";
+@import "abstract/mixins";
+
+
+@import "base/typography";
+
+@font-face {
+    font-family:"cormorant" ;
+    src: url('../fonts/Cormorant-Medium.otf');
+}
+@font-face {
+    font-family:"cinzel-bold" ;
+    src: url('../fonts/Cinzel-Bold.otf');
+}
+@font-face {
+    font-family:"cinzel-light" ;
+    src: url('../fonts/Cormorant-Light.otf');
+}
+@font-face {
+    font-family:"cinzel-medium" ;
+    src: url('../fonts/Cormorant-Medium.otf');
+}
+
+@font-face {
+    font-family:"grotesk" ;
+    src: url('../fonts/SpaceGrotesk-Regular.otf');
+}
+
+@font-face {
+    font-family:"grotesk-bold" ;
+    src: url('../fonts/SpaceGrotesk-Bold.otf');
+}
+
+@font-face {
+    font-family:"grotesk-medium" ;
+    src: url('../fonts/SpaceGrotesk-Medium.otf');
+}
+@font-face {
+    font-family:"grotesk-light" ;
+    src: url('../fonts/SpaceGrotesk-Light.otf');
+}
+
+
+.app, body, html{
+
+    margin: 0 !important;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    background: #141414; 
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}

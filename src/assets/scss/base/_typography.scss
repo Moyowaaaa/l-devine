@@ -1,0 +1,48 @@
+.nav-title {
+    @include typography(700, 2.7rem,null,'Cormorant')
+}
+
+
+.title-bold {
+    @include typography(700, 3.75rem, 0.5rem,'cinzel-bold')
+}
+
+.title-regular {
+    @include typography(700, 3.75rem, 4.5rem,'cinzel-medium')
+}
+.title-2-regular {
+    @include typography(600, 3.75rem, 1rem,'cinzel-light')
+}
+.title-3-regular{
+    @include typography(600, 2.5rem, 1.2rem,'cinzel-medium')
+}
+
+.paragraph-bold {
+    @include typography(700,1.5rem, 0.7rem,'grotesk')
+}
+
+.paragraph-text {
+    @include typography(400,1.25rem, 0.6rem,'grotesk')
+}
+
+.paragraph-regular {
+    @include typography(400,1.5rem, 1.8rem,'grotesk')
+}
+
+.paragraph-normal {
+    @include typography(400,1.2rem, 1.4rem,'grotesk')
+}
+.paragraph-small {
+    @include typography(400,1.2rem, 1.8rem,'grotesk')
+}
+.paragraph-extrasmall {
+    @include typography(400,1rem, 1.3rem,'grotesk-light')
+}
+
+.footer-text {
+    @include typography(500,1.125rem, 2rem,'grotesk-bold')
+}
+.footer-text-small {
+    @include typography(500,0.75rem, 2rem,'grotesk-bold')
+}
+
