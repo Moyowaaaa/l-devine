@@ -1,8 +1,8 @@
 <template>
     <div class="footer-section">
         <div class="footer-section__credits">
-            <span class="footer-text">Designed by <span class="person">Bvlck</span> & <span class="person">Israel </span></span>
-            <span class="footer-text">Developed by <span class="person">Moyowa</span></span>
+            <span class="footer-text">Designed by <a href="https://www.behance.net/adesiyanbss"> <span class="person">Bvlck</span></a> & <a href="https://www.behance.net/israeladeniyi8"><span class="person">Israel </span></a></span>
+            <span class="footer-text">Developed by <a href="https://github.com/Moyowaaaa"><span class="person">Moyowa</span></a></span>
         </div>
         <div class="footer-section__socials">
 
@@ -20,16 +20,31 @@
           
         </div>
         <div class="footer-section__navigator">
-            <span class="footer-text person">Back to the top</span>
+            <button class="footer-text person" @click="scrollToTop">Back to the top</button>
         </div>
     </div>
 </template>
 
 <script setup lang="ts">
-
+const scrollToTop = () =>  {
+            window.scrollTo({
+                top:0,
+                behavior: 'smooth'
+            })
+        }
 </script>
 
 <style lang="scss" scoped>
+a{
+    color:black;
+    text-decoration: none;
+}
+button{
+    outline: none;
+    border: none;
+    background-color: transparent;
+    cursor:pointer
+}
 .footer-section {
     height: 50vh;
     overflow-x: hidden;

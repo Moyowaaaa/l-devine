@@ -2,6 +2,13 @@
     @include typography(700, 2.7rem,null,'Cormorant')
 }
 
+.menu-title{
+    @include typography(500, 3.15rem,1rem, 'cinzel-bold')
+}
+.menu-paragraph{
+    @include typography(300, 0.84rem,1.176rem,'grotesk-light' )
+}
+
 
 .title-bold {
     @include typography(700, 3.75rem, 0.5rem,'cinzel-bold')

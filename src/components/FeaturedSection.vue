@@ -56,9 +56,13 @@
     height: 100vh;
     width: 100%;
 
-    // background-image: url('../assets/images/featuredBottom.png  ');
-    //     background-position: left bottom;
-    //     background-repeat: no-repeat;
+    background-image: url('../assets/images/featuredBottom.png');
+    
+    background-position: left bottom;
+        background-repeat: no-repeat;
+        background-position-y: 5rem;
+
+
     &__maincontainer{
         padding-top: 1rem;
         display: flex;

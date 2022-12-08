@@ -1,5 +1,9 @@
 <template>
+    <div>
+        <navbar />
     <div class="title-section">
+        
+        
         <div class="title-section__body">
             <h1 class="title-bold title" >Beauty in sight</h1>
             <p class="paragraph-extrasmall paragraph">Get the most luxurious flower collection to bring life into your environment.</p>
@@ -18,10 +22,11 @@
                 
         </div>
     </div>
+    </div>  
 </template>
 
 <script setup lang="ts">
-
+import navbar from '../components/Navbar.vue'
 </script>
 
 <style lang="scss" scoped>

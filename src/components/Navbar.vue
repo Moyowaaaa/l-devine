@@ -12,8 +12,14 @@
 <style lang="scss" scoped>
 .navbar{
   
-    width:100%;
+    width:90%;
+  
+    left: 5%;
+    // position: fixed;
+    position: absolute;
+    top:2rem;
     
+  
     display: flex;
     background-color: transparent;
     align-items: center;

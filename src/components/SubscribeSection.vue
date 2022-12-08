@@ -79,6 +79,11 @@ $white:white;
         display: flex;
         flex-direction: column;
         justify-content: center;
+              
+       background-image: url('../assets/images/newletterbottom.svg');
+       background-position: right bottom;
+       background-position-y: 21rem;
+       background-repeat: no-repeat;
     }
 
     &__right__content{

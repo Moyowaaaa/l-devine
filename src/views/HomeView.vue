@@ -1,15 +1,19 @@
 <template>
 
-    <TitleSectionVue />
-    <!-- <ShowcaseSection /> -->
-
+    <div class="home">
+        <!-- <Menu/> -->
+        <TitleSectionVue />
     <AboutSection />
     <FeaturedSection />
+      <ShowcaseSection/>
     <SubscribeSection />
+    </div>
+    
   
 </template>
 
 <script setup lang="ts">
+import Menu from '../components/Menu.vue'
 import TitleSectionVue from '@/components/TitleSection.vue';
 import ShowcaseSection from '../components/ShowcaseSection.vue'
 import SubscribeSection from '../components/SubscribeSection.vue'
@@ -18,5 +22,9 @@ import FeaturedSection from '../components/FeaturedSection.vue'
 </script>
 
 <style lang="scss" scoped>
-
+.home{
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
 </style>
