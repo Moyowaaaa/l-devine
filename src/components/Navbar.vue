@@ -13,7 +13,7 @@
 .navbar{
   
     width:90%;
-  
+    z-index: 20;
     left: 5%;
     // position: fixed;
     position: absolute;
