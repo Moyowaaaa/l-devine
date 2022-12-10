@@ -1,4 +1,5 @@
 <script setup lang="ts">
+
 import navbar from '../components/Navbar.vue'
 import {gsap} from 'gsap'
 import { onMounted, ref } from 'vue';
@@ -10,6 +11,13 @@ const titleImage3 = ref<HTMLDivElement | null>(null)
 const titleImageText = ref<HTMLDivElement | null>(null)
 
 
+interface Props{
+    showMenu: boolean | any
+}
+
+const titleProps = defineProps<Props>()
+
+console.log('showwwww',titleProps.showMenu)
 onMounted(() => {
     const tl =gsap.timeline()
     tl.from('.title-section', {
@@ -49,7 +57,7 @@ onMounted(() => {
 
 <template>
     <div>
-        <navbar />
+        <navbar :showMenu="showMenu"/>
     <div class="title-section">
         
         

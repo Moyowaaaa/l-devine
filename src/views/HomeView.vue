@@ -1,14 +1,14 @@
 <template>
 
     <div class="home">
-        <!-- <Menu/> -->
+        <Menu/>
         <PreloaderVue />
-        <TitleSectionVue />
+        <TitleSectionVue :showMenu="showMenu" />
     <AboutSection />
     <FeaturedSection />
       <ShowcaseSection/>
     <SubscribeSection />
-      
+       
     </div>
     
   
@@ -22,6 +22,10 @@ import ShowcaseSection from '../components/ShowcaseSection.vue'
 import SubscribeSection from '../components/SubscribeSection.vue'
 import AboutSection from '../components/AboutSection.vue'
 import FeaturedSection from '../components/FeaturedSection.vue'
+import { ref } from 'vue';
+
+let showMenu = ref<boolean | any>(false)
+
 
 </script>
 

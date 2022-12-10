@@ -1,5 +1,5 @@
 <template>
-    <div class="menu">
+    <div class="menu" v-if="showMenu">
         <div class="menu__image"></div>
 
         <div class="menu__container">
@@ -35,7 +35,8 @@
 </template>
 
 <script setup lang="ts">
-
+import { ref } from 'vue';
+const showMenu = ref<boolean>(false)
 </script>
 
 <style lang="scss" scoped>
@@ -44,7 +45,8 @@
     width:100%;
     position:absolute;
     background-color: white;
-    z-index: 100;
+    z-index: 20;
+
     display: flex;
 
     &__image{
