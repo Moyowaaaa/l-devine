@@ -5,6 +5,7 @@ import { ref, onMounted } from 'vue';
 const navRef = ref<HTMLDivElement | null>(null)
 const navTitleRef = ref<HTMLDivElement | null>(null)
 const navButtonRef = ref<HTMLDivElement | null>(null)
+import MenuVue from './Menu.vue';
 
 let navbarIsOpen = ref<boolean>(false)
 
@@ -34,10 +35,10 @@ console.log(menuProps.showMenu)
 
 const toggleNavbar = () => {
     navbarIsOpen.value = !navbarIsOpen.value;
-    menuProps.showMenu = !menuProps.showMenu
+   
 
 
-    console.log(menuProps.showMenu)
+    console.log(navbarIsOpen.value)
     // console.log(navbarIsOpen.value)
 };
 
@@ -47,6 +48,8 @@ const toggleNavbar = () => {
     <div class="navbar" ref="navRef">
         <div class="nav-title" ref="navTitleRef">L'devine</div>
         <div class="nav-button" ref="navButtonRef" @click="toggleNavbar"><img src="../assets/images/kebab.svg"></div>
+
+        
     </div>
 </template>
 

@@ -95,7 +95,7 @@ onMounted(() => {
       </div>
 
       <div class="text-reveal-container">
-        <div class="text-reveal-container__text reveal">L'DEVINE</div>
+        <div class="text-reveal-container__text reveal">L'devine</div>
       </div>
     </div>
   </div>
