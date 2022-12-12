@@ -1,9 +1,37 @@
+<script setup lang="ts">
+import { ref, onMounted } from 'vue';
+import {gsap} from 'gsap'
+
+interface menuProps {
+    show:boolean,
+}
+interface menuEmits{
+    (e:'showMenu', value:boolean):void
+}
+
+defineEmits<menuEmits>()
+defineProps<menuProps>()
+
+
+
+
+
+onMounted(() => {
+    const menuTl = gsap.timeline()
+
+
+    menuTl.from('.close-btn', {scale:1.5, duration:0.7, delay:3.5, })
+})
+</script>
+
+
 <template>
-    <div class="menu" v-if="showMenu">
+    <div class="menu" v-if="show">
         <div class="menu__image"></div>
 
         <div class="menu__container">
-            <div class="close-btn">
+            <div class="close-btn" @click="$emit('showMenu')">
+                
                 <img src="../assets/images/close.svg" />
             </div>
             <div class="link-container">
@@ -34,16 +62,13 @@
     </div>
 </template>
 
-<script setup lang="ts">
-import { ref } from 'vue';
-const showMenu = ref<boolean>(false)
-</script>
+
 
 <style lang="scss" scoped>
 .menu{
     height: 100vh;
     width:100%;
-    position:absolute;
+    position:fixed;
     background-color: white;
     z-index: 20;
 
@@ -68,10 +93,12 @@ const showMenu = ref<boolean>(false)
 .close-btn{
     position: absolute;
     right: 2rem;
-    padding:2rem
+    padding:2rem;
+    cursor:pointer
 }
 .link-container{
     padding-top: 8rem;
     padding-left: 10rem;
+    cursor:pointer
 }
 </style>

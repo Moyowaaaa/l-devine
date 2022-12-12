@@ -11,13 +11,7 @@ const titleImage3 = ref<HTMLDivElement | null>(null)
 const titleImageText = ref<HTMLDivElement | null>(null)
 
 
-interface Props{
-    showMenu: boolean | any
-}
 
-const titleProps = defineProps<Props>()
-
-console.log('showwwww',titleProps.showMenu)
 onMounted(() => {
     const tl =gsap.timeline()
     tl.from('.title-section', {
@@ -53,18 +47,24 @@ onMounted(() => {
         ease:"power3.inOut"
     }, "<0.1")
 })
+
+const emit = defineEmits(['showMenu'])
+
+function showMenu() {
+    emit('showMenu')
+}
 </script>
 
 <template>
     <div>
-        <navbar :showMenu="showMenu"/>
+        <navbar @openMenu="showMenu"/>
     <div class="title-section">
         
         
         <div class="title-section__body" ref="titleText">
             <h1 class="title-bold title" >Beauty in sight</h1>
             <p class="paragraph-extrasmall paragraph">Get the most luxurious flower collection to bring life into your environment.</p>
-            <button class="title-section__button paragraph-extrasmall">
+            <button class="title-section__button paragraph-extrasmall" >
                 Browse All</button>
         </div>
 

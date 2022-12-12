@@ -1,9 +1,9 @@
 <template>
 
     <div class="home">
-        <Menu/>
+        <Menu :show="showMenu" @showMenu="openMenu" />
         <PreloaderVue />
-        <TitleSectionVue :showMenu="showMenu" />
+        <TitleSectionVue @showMenu="openMenu" />
     <AboutSection />
     <FeaturedSection />
       <ShowcaseSection/>
@@ -25,6 +25,12 @@ import FeaturedSection from '../components/FeaturedSection.vue'
 import { ref } from 'vue';
 
 let showMenu = ref<boolean | any>(false)
+
+const openMenu = () => {
+    showMenu.value = !showMenu.value
+}
+
+
 
 
 </script>

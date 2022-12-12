@@ -5,9 +5,8 @@ import { ref, onMounted } from 'vue';
 const navRef = ref<HTMLDivElement | null>(null)
 const navTitleRef = ref<HTMLDivElement | null>(null)
 const navButtonRef = ref<HTMLDivElement | null>(null)
-import MenuVue from './Menu.vue';
 
-let navbarIsOpen = ref<boolean>(false)
+
 
 onMounted(() => {
     const navTl = gsap.timeline()
@@ -26,28 +25,12 @@ onMounted(() => {
     })
 })
 
-interface Props{
-    showMenu: boolean | any
-}
-let menuProps = defineProps<Props>()
-
-console.log(menuProps.showMenu)
-
-const toggleNavbar = () => {
-    navbarIsOpen.value = !navbarIsOpen.value;
-   
-
-
-    console.log(navbarIsOpen.value)
-    // console.log(navbarIsOpen.value)
-};
-
 </script>
 
 <template>
     <div class="navbar" ref="navRef">
         <div class="nav-title" ref="navTitleRef">L'devine</div>
-        <div class="nav-button" ref="navButtonRef" @click="toggleNavbar"><img src="../assets/images/kebab.svg"></div>
+        <div class="nav-button" ref="navButtonRef" @click="$emit('openMenu')"><img src="../assets/images/kebab.svg"></div>
 
         
     </div>
