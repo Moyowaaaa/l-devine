@@ -1,47 +1,59 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, onUnmounted, toRefs, computed,watch } from 'vue';
 import {gsap} from 'gsap'
 
 interface menuProps {
     show:boolean,
+    isOpen:boolean
 }
 interface menuEmits{
     (e:'showMenu', value:boolean):void
+    (e:'closeMenu', value:boolean):void
 }
 
 defineEmits<menuEmits>()
-defineProps<menuProps>()
+const navProps = defineProps<menuProps>()
+
+const closebtnRef = ref(null)
+
+const {show, isOpen} = toRefs(navProps)
+
+    console.log('menu',show.value)
+
+    watch(() => show, () => {
+        if(show.value) {
+            console.log('trueeee')
+        }else {
+            console.log('else')
+        }
+    })
 
 
 
-
-
-onMounted(() => {
-    const menuTl = gsap.timeline()
-
-
-    menuTl.from('.close-btn', {scale:1.5, duration:0.7, delay:3.5, })
-})
 </script>
 
 
 <template>
     <div class="menu" v-if="show">
+        <div class="menuIsOpen" v-if="show">
+            menuuu
+        </div>
         <div class="menu__image"></div>
 
         <div class="menu__container">
-            <div class="close-btn" @click="$emit('showMenu')">
-                
+            <div class="close-btn" @click="$emit('closeMenu')" ref="closebtnRef">
                 <img src="../assets/images/close.svg" />
             </div>
+      
+
             <div class="link-container">
                 <div>
-                <h1 class="menu-title">HOME</h1>
+                <h1 class="menu-title" >HOME</h1>
                 <p class="menu-paragraph">Let’s get back to the beginning</p>
                 </div>
 
                 <div>
-                <h1 class="menu-title">ABOUT</h1>
+                <h1 class="menu-title" >ABOUT</h1>
                 <p class="menu-paragraph">Get to know more about us</p>
                 </div>
 
@@ -91,10 +103,15 @@ onMounted(() => {
     
 }
 .close-btn{
+    right: 5%;
     position: absolute;
-    right: 2rem;
-    padding:2rem;
-    cursor:pointer
+    top:2rem;
+    // position: absolute;
+    width: 45%;;
+    display: flex;
+    justify-content: end;
+
+   
 }
 .link-container{
     padding-top: 8rem;

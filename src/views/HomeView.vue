@@ -1,7 +1,7 @@
 <template>
 
     <div class="home">
-        <Menu :show="showMenu" @showMenu="openMenu" />
+        <!-- <Menu :show="showMenu" @showMenu="openMenu" @closeMenu="closeMenu" :isOpen="navbarIsOpen" /> -->
         <PreloaderVue />
         <TitleSectionVue @showMenu="openMenu" />
     <AboutSection />
@@ -25,10 +25,27 @@ import FeaturedSection from '../components/FeaturedSection.vue'
 import { ref } from 'vue';
 
 let showMenu = ref<boolean | any>(false)
+let navbarIsOpen = ref<boolean | any>(false)
 
 const openMenu = () => {
-    showMenu.value = !showMenu.value
+    showMenu.value = true
+    console.log('show', showMenu.value)
+    // navbarIsOpen.value = !navbarIsOpen.value
 }
+
+const closeMenu = () => {
+    showMenu.value = false
+    console.log('show', showMenu.value)
+}
+
+
+
+
+
+// const start = () => {
+//     navbarIsOpen.value = !navbarIsOpen.value
+//     console.log(navbarIsOpen.value)
+// }
 
 
 
