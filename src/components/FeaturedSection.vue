@@ -1,7 +1,61 @@
+<script setup lang="ts">
+import {gsap} from 'gsap'
+import {ScrollTrigger} from 'gsap/ScrollTrigger'
+import { onMounted,ref } from 'vue';
+      gsap.registerPlugin(ScrollTrigger)
+
+
+      const featuredSection = ref<HTMLDivElement | null>(null)
+      const featuredHeadText = ref<HTMLTitleElement | null>(null)
+
+
+      onMounted(() => {
+    //     let featuredTl = gsap.timeline({
+    //         scrollTrigger:{
+    //             trigger: featuredSection.value,
+    //             start: "top center", // when the top of the trigger hits the top of the viewport
+    //   end: "+=50",
+    //             markers:true,
+    //             scrub:true
+    //         }
+    //     })
+
+    //     featuredTl.from(featuredSection.value, {
+    //         opacity:0,
+    //         y:400,
+    //         ease:"powert3.inOut"
+    //     })
+    //     featuredTl.fromTo(featuredHeadText.value,{y: 0, opacity: 0, }, { opacity:1, clipPath: "polygon(0 100%, 100% 100%, 100% 0, 0 0)", delay:0.8}, "<0.3");;
+        // featuredTl.from(featuredSection.value, { opacity:0,
+        // delay:1.2,
+        // y:400,
+        // ease:"power3.inOut" })
+
+        let featuredSectionTl = gsap.timeline({
+            scrollTrigger:{
+                trigger: '.featured-section',
+                // scrub:0.2
+   
+
+            }
+        })
+
+        featuredSectionTl.from('.featured-section', {
+            y:400,
+            duration:0.8,
+            opacity:0,
+            ease:"power3.inOut"
+        }, "<0.1")
+
+      })
+
+</script>
+
+
 <template>
-    <div class="featured-section">
-        <div class="featured-section__maincontainer">
-            <h1 class="title-bold title">Featured</h1>
+    <div class="featured-section" >
+        <div class="featured-section__maincontainer" ref="featuredSection">
+            <h1 class="title-bold title" ref="featuredHeadText">Featured</h1>
 
             <div class="featured-section__container">
                 <div class="featured-section__featuredCard">
@@ -47,9 +101,7 @@
     </div>
 </template>
 
-<script setup lang="ts">
 
-</script>
 
 <style lang="scss" scoped>
 .featured-section{
@@ -61,6 +113,7 @@
     background-position: left bottom;
         background-repeat: no-repeat;
         background-position-y: 5rem;
+       
 
 
     &__maincontainer{

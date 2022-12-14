@@ -1,3 +1,22 @@
+<script setup lang="ts">
+import {gsap} from 'gsap'
+import {ScrollTrigger} from 'gsap/ScrollTrigger'
+import { onMounted } from 'vue';
+      gsap.registerPlugin(ScrollTrigger)
+      
+
+     
+
+
+const scrollToTop = () =>  {
+            window.scrollTo({
+                top:0,
+                behavior: 'smooth'
+            })
+        }
+</script>
+
+
 <template>
     <div class="footer-section">
         <div class="footer-section__credits">
@@ -25,14 +44,7 @@
     </div>
 </template>
 
-<script setup lang="ts">
-const scrollToTop = () =>  {
-            window.scrollTo({
-                top:0,
-                behavior: 'smooth'
-            })
-        }
-</script>
+
 
 <style lang="scss" scoped>
 a{

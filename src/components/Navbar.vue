@@ -1,17 +1,37 @@
 <script setup lang="ts">
 import { gsap } from 'gsap';
-import { ref, onMounted, watch } from 'vue';
+import { ref, onMounted, watch, watchEffect } from 'vue';
+import { useRoute } from 'vue-router';
 
-const navRef = ref<HTMLDivElement | null>(null)
-const navTitleRef = ref<HTMLDivElement | null>(null)
-const navButtonRef = ref<HTMLDivElement | null>(null)
+const navRef = ref(null)
+const navTitleRef = ref(null)
+const navButtonRef = ref(null)
 
-const closebtnRef = ref(null)
+const closebtnRef = ref()
+
+
+
+
+
+let showMenu = ref(false)
+let navbarIsOpen = ref(false)
+
+
+
+
+const navTl = gsap.timeline()
+
+let navbarTL = gsap.timeline({ paused: true });
+
+
+
 
 
 
 onMounted(() => {
-    const navTl = gsap.timeline()
+  
+console.log(showMenu.value)
+
 
     navTl.from(navRef.value, {
         opacity:0,
@@ -25,39 +45,37 @@ onMounted(() => {
         ease:"power3.inOut",
         opacity:0
     })
+
 })
 
 
-let showMenu = ref<boolean | any>(false)
-let navbarIsOpen = ref<boolean | any>(false)
 
-
-
-
-let nav = ref(showMenu.value)
-
-const NavbarTL = gsap.timeline({ paused: true });
-
-onMounted(() => {
-    NavbarTL.from(closebtnRef.value, {
-        duration:1.2,
-        delay:0.5,
-        scale:2.5,
-        opacity:0,
-        ease:"power3.inOut"
-    })
-})
-
-const NavMenu = () => {
+const navMenu = () => {
     showMenu.value = !showMenu.value
+    console.log('show',showMenu.value)
     if(showMenu.value === true) {
-        NavbarTL.play()
-    } else {
-        NavbarTL.reverse()
+        console.log('yes')
+        navbarTL.play()
+    }else {
+        console.log('no')
     }
-    console.log('show', showMenu.value)
     // navbarIsOpen.value = !navbarIsOpen.value
 }
+
+// watch(showMenu, () => {
+//     if (showMenu.value === true) {
+//         navbarTL.play()
+//         console.log(navbarTL)
+//     }
+  
+// })
+// watch(useRoute(),() => {
+//     if(showMenu.value) {
+//         showMenu.value = false;
+//         navbarTL.reverse()
+//     }
+// })
+
 
 
 </script>
@@ -66,19 +84,17 @@ const NavMenu = () => {
     <div>
         <div class="navbar" ref="navRef">
         <div class="nav-title" ref="navTitleRef">L'devine</div>
-        <div class="nav-button" ref="navButtonRef" @click="NavMenu"><img src="../assets/images/kebab.svg"></div>
+        <div class="nav-button" ref="navButtonRef" @click="navMenu"><img src="../assets/images/kebab.svg"></div>
         </div>
 
 
         <!-- --- -->
         <div class="menu" v-if="showMenu">
-        <div class="menuIsOpen" v-if="showMenu">
-            menuuu
-        </div>
+      
         <div class="menu__image"></div>
 
         <div class="menu__container">
-            <div class="close-btn" @click="NavMenu" ref="closebtnRef">
+            <div class="close-btn" @click="navMenu" ref="closebtnRef">
                 <img src="../assets/images/close.svg" />
             </div>
       

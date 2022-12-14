@@ -84,7 +84,7 @@ onMounted(() => {
     <div class="preloader__container" ref="preloaderRef">
       <div class="preloader__bar" ref="barRef"></div>
       <div class="preloader__textcontainer">
-        <p class="text">L'DEVINE</p>
+        <p class="text">L'devine</p>
         <!-- <p class="text blackText">L'DEVINE</p> -->
         <p class="percentage">
           <span v-if="loadingPercentage.toString().length === 1 && 0"> </span>
