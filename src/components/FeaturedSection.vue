@@ -113,6 +113,10 @@ import { onMounted,ref } from 'vue';
     background-position: left bottom;
         background-repeat: no-repeat;
         background-position-y: 5rem;
+
+        @media screen and (max-width:485px) {
+  height:auto;
+}
        
 
 
@@ -127,6 +131,11 @@ import { onMounted,ref } from 'vue';
         width: 100%;
        
         justify-content:space-around;
+
+        @media screen and (max-width:485px) {
+    flex-direction: column;
+    width: 100%;
+}
        
     }
 
@@ -135,6 +144,12 @@ import { onMounted,ref } from 'vue';
         flex-direction: column;
         width: 20rem;
         height: auto;
+
+        @media screen and (max-width:485px) {
+            padding:1rem 0;
+            width: 90%;
+            margin: 0 auto;
+}
    
     }
 

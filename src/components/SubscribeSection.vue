@@ -61,6 +61,10 @@ $white:white;
     
     color: $white;
 
+    @media screen and (max-width:485px) {
+        height: auto;
+        flex-direction: column;;
+    }
 
     &__left{
         width: 50%;;
@@ -72,6 +76,12 @@ $white:white;
        display: flex;
        flex-direction: column;
        justify-content: end;
+
+
+       @media screen and (max-width:485px) {
+       width: 100%;
+       background-size: 100% 100%;
+    }
     }
   
 
@@ -80,6 +90,11 @@ $white:white;
         padding: 2rem;
         display: flex;
         justify-content: center;
+
+        @media screen and (max-width:485px) {
+            padding: 1rem;
+            text-align: justify;
+        }
     }
 
     &__right{
@@ -94,16 +109,37 @@ $white:white;
        background-position: right bottom;
        background-position-y: 21rem;
        background-repeat: no-repeat;
+
+       @media screen and (max-width:485px) {
+        width: 100%;
+       }
+
+       
     }
 
     &__right__content{
         display: flex;
         padding-left: 5rem;
+
+        @media screen and (max-width:485px) {
+            padding-left: 1rem;
+            padding-bottom: 5rem;
+        }
     }
 
     &__right__content__formcontainer{
         display: flex;
+
+
+        @media screen and (max-width:485px) {
+           flex-direction: column;
+           gap:1rem
+        }
+
     }
+
+
+
     &__right__content__form{
         width: 23rem;
        padding: 0.8rem 0.6rem;
@@ -111,6 +147,10 @@ $white:white;
        color: white;
        outline: none;
        border: 1px solid #FFFFFF;
+
+       @media screen and (max-width:485px) {
+            width: 90%;
+        }
     }
     &__right__content__form::placeholder{
         padding-left: 1.3rem;
@@ -120,6 +160,10 @@ $white:white;
         background-color: white;
         padding: 0.8rem 2rem;
         color: black;
+
+        @media screen and (max-width:485px) {
+            padding: 0.2rem 2rem; 
+        }
     }
 }
 .paragraph-text{
@@ -131,6 +175,10 @@ $white:white;
 
 .text{
     width: 27rem;
+
+    @media screen and (max-width:485px) {
+         width: 90%;
+        }
 }
 
 </style>

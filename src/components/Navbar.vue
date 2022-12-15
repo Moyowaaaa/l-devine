@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import { gsap } from 'gsap';
 import { ref, onMounted, watch, watchEffect } from 'vue';
-import { useRoute } from 'vue-router';
-
+import { useRouter } from 'vue-router';
+import { RouterLink } from "vue-router";
+const router = useRouter
 const navRef = ref(null)
 const navTitleRef = ref(null)
 const navButtonRef = ref(null)
@@ -12,10 +13,10 @@ const closebtnRef = ref()
 
 
 const navLinks =[ 
-    {title:"HOME", description:"Let’s get back to the beginning"}, 
-    {title:"ABOUT", description:"Get to know more about us"},
-    {title:"CONTACT US", description:"Get in touch we’re never too far"},
-    {title:"ORDER", description:"Already want the flowers??...nice!!"}
+    {title:"HOME", description:"Let’s get back to the beginning", destination:'#home'}, 
+    {title:"ABOUT", description:"Get to know more about us",destination:'#about'},
+    {title:"CONTACT US", description:"Get in touch we’re never too far", destination:'#home'},
+    {title:"ORDER", description:"Already want the flowers??...nice!!", destination:'#contact'}
 
 ]
 
@@ -166,8 +167,12 @@ const openMenu = () => {
         <div class="links-container">
             <div class="link-container">
                 <div class="link" v-for="link in navLinks">
+                  
+                        <div>
                     <h1 class="menu-title" >{{link.title}}</h1>
                 <p class="menu-paragraph">{{link.description}}</p>
+                </div>
+              
                 </div>
 
            
@@ -197,10 +202,10 @@ const openMenu = () => {
     overflow-x: hidden;
     width:90%;
     z-index: 12;
-    left: 5%;
+    left: 5.2%;
     // position: fixed;
     position: absolute;
-    top:2rem;
+    top:2.6rem;
     
   
     display: flex;
@@ -247,7 +252,14 @@ const openMenu = () => {
         background-image: url('../assets/images/menuImage.svg');
         background-size: cover;
         background-repeat: no-repeat;
+
+        @media screen and (max-width:485px) {
+            display: none;
+        }
     }
+
+
+
 
 
 
@@ -281,15 +293,28 @@ const openMenu = () => {
 
 .links-container{
     width: 50%;
+
+    @media screen and (max-width:485px) {
+        width: 100%;
+    }
 }
 
 .link-container{
     height: 100%;
-
     padding: 10rem 10rem;
+
+    @media screen and (max-width:485px) {
+        padding: 8rem 5rem;
+    }
 }
 
 
 
+@media screen and (max-width:485px) {
+.menu-title{
+    line-height: 2rem;
+    font-size: 2.5rem;
+}
+}
 
 </style>

@@ -40,7 +40,7 @@ const scrollToTop = () =>  {
 
 
 <template>
-    <div class="footer-section">
+    <div class="footer-section" id="contact">
         <div class="footer-section__credits" ref="creditsRef">
             <span class="footer-text">Designed by <a href="https://www.behance.net/adesiyanbss"> <span class="person">Bvlck</span></a> & <a href="https://www.behance.net/israeladeniyi8"><span class="person">Israel </span></a></span>
             <span class="footer-text">Developed by <a href="https://github.com/Moyowaaaa"><span class="person">Moyowa</span></a></span>
@@ -85,6 +85,10 @@ button{
     display: flex;
     justify-content: space-evenly;
 
+    @media screen and (max-width:485px) {
+       flex-direction: column;
+       }
+
 
     &__credits{
        width: 33%;
@@ -92,6 +96,11 @@ button{
        flex-direction: column;
        justify-content: center;
        margin-left: 5rem;
+
+       @media screen and (max-width:485px) {
+        width: 100%;
+        margin-left:2rem
+       }
        
     }
     &__socials{
@@ -101,12 +110,23 @@ button{
        justify-content: end;
        margin-bottom: 3rem;
        gap:2%;
-      
 
+       @media screen and (max-width:485px) {
+        width: 100%;
+        // margin-left:
+        align-items: center;;
+
+       }
        .social-links{
         display: flex;
         justify-content: center;
         gap: 2%;
+        
+
+        @media screen and (max-width:485px) {
+        justify-content: start;
+        gap:2rem;
+        }
         
         
        }
@@ -120,7 +140,15 @@ button{
         display:flex;
         justify-content: center;
         gap:1%;
+
+
+        @media screen and (max-width:485px) {
+        justify-content: start;
+        display:none
+        }
        }
+
+       
     }
     &__navigator{
        width: 33%;
@@ -129,6 +157,12 @@ button{
        justify-content: center;
        align-items: flex-end;
        margin-right: 10rem;
+
+       @media screen and (max-width:485px) {
+        width: 100%;
+        margin-right:2rem;
+        
+       }
     }
 
 

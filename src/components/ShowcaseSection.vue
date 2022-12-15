@@ -31,8 +31,14 @@
 
     &__row{
         height: 100%;
-    
-        display:flex
+        display:flex;
+
+        
+        @media screen and (max-width:485px) {
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+}
     }
     &__column {
        
@@ -41,6 +47,11 @@
         display: flex;
         flex-direction: column;
         height:90rem;
+
+        @media screen and (max-width:485px) {
+  
+    width: 100%;
+}
     }
     &__column__top{
         height: 50%;
@@ -49,6 +60,8 @@
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
+
+        
     
     }
     &__column__bottom{
@@ -66,6 +79,11 @@
         object-fit: contain;
         display: flex;
         flex-direction: column;
+
+        @media screen and (max-width:485px) {
+   
+    width: 100%;
+}
     }
 
     &__topRow{

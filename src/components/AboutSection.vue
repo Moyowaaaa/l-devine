@@ -1,5 +1,5 @@
 <template>
-    <div class="about-section">
+    <div class="about-section" id="about">
         <div class="about-section__top-section">
             <div class="about-section__top-section__left">
         <img src="../assets/images/afterTitle1.png" />
@@ -51,15 +51,25 @@ Amet natoque molestie sed semper. Elementum phasellus purus, phasellus augue ris
 .about-section{
     height: auto;
     width: 100%;
-
+    
     &__top-section{
         display: flex;
+        @media screen and (max-width:485px) {
+    flex-direction: column;
+    width: 100%;
+}
     }
     &__top-section__left{
         width: 50%;
         display: flex;
         background-color: #8D7362;
         justify-content: center;
+
+        @media screen and (max-width:485px) {
+    flex-direction: column;
+    width: 100%;
+}
+
     }
     &__top-section__right{
         width: 50%;
@@ -70,6 +80,12 @@ Amet natoque molestie sed semper. Elementum phasellus purus, phasellus augue ris
         padding-bottom: 2rem;
         background-image: url('../assets/images/afterTitle2.png');
         background-size: cover;
+
+        @media screen and (max-width:485px) {
+    flex-direction: column;
+    width: 100%;
+    height:40rem
+}
     }
 
 }
@@ -82,6 +98,11 @@ Amet natoque molestie sed semper. Elementum phasellus purus, phasellus augue ris
 
     p{
         text-align: right;
+
+        @media screen and (max-width:485px) {
+       
+            text-align: left;
+        }
     }
 }
 
@@ -93,6 +114,12 @@ padding: 2rem 0;
 background-image: url('../assets/images/aboutSectionBackground.png');
 background-repeat: no-repeat;
 background-size: cover;
+
+@media screen and (max-width:485px) {
+    flex-direction: column;
+    justify-content: start;
+    width: 100%;
+}
 
 
 &__maincontainer{

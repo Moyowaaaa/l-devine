@@ -48,16 +48,12 @@ onMounted(() => {
     }, "<0.1")
 })
 
-const emit = defineEmits(['showMenu'])
 
-function showMenu() {
-    emit('showMenu')
-}
 </script>
 
 <template>
     <div>
-        <navbar @openMenu="showMenu"/>
+        <navbar />
     <div class="title-section">
         
         
@@ -110,12 +106,19 @@ function showMenu() {
         margin-left:5%;
         ;
 
+        @media screen and (max-width:485px) {
+   width: 100%;
+}
 
        
 
         .paragraph{
             width: 65%;
             padding-bottom: 5%;
+
+            @media screen and (max-width:485px) {
+width: 85%;
+            }
            
         }
         // padding-left: 5%;
@@ -146,6 +149,10 @@ function showMenu() {
     background-repeat: no-repeat;
     background-size: cover;
 
+    @media screen and (max-width:485px) {
+    display:none
+}
+
 
 }
 &__image2{
@@ -155,6 +162,10 @@ function showMenu() {
 
     height: 100%;
     width: 7%;
+
+    @media screen and (max-width:485px) {
+    display:none
+}
     
 
 }
@@ -167,6 +178,10 @@ function showMenu() {
     height: 100%;
     width: 35%;
     justify-content: end;
+
+    @media screen and (max-width:485px) {
+    display:none
+}
     
 }
 
@@ -190,5 +205,13 @@ function showMenu() {
     border:2px solid red;
   
 }
+
+
+@media screen and (max-width:485px) {
+.title-bold{
+    line-height: 4rem;
+}
+}
+
 
 </style>
