@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import {gsap} from 'gsap'
 import {ScrollTrigger} from 'gsap/ScrollTrigger'
-import { onMounted } from 'vue';
+import { onMounted, ref } from 'vue';
       gsap.registerPlugin(ScrollTrigger)
       
 
@@ -14,22 +14,44 @@ const scrollToTop = () =>  {
                 behavior: 'smooth'
             })
         }
+
+        const creditsRef = ref(null)
+        
+
+
+        onMounted(() => {
+            const tl = gsap.timeline()
+            tl.fromTo(creditsRef.value,  {y: 0, opacity: 0, }, { opacity:1,duration:3.2, clipPath: "polygon(0 100%, 100% 100%, 100% 0, 0 0)"}, "<0.1");;
+            tl.from('.instagram',{
+                y:200, opacity:0,
+                 ease:"power3.inOut", stagger:0.4
+            })
+            tl.from('.twitter',{
+                y:200, opacity:0,
+                 ease:"power3.inOut", stagger:0.6
+            })
+            tl.from('.mail',{
+                y:200, opacity:0,
+                 ease:"power3.inOut", stagger:0.8
+            })
+         
+        })
 </script>
 
 
 <template>
     <div class="footer-section">
-        <div class="footer-section__credits">
+        <div class="footer-section__credits" ref="creditsRef">
             <span class="footer-text">Designed by <a href="https://www.behance.net/adesiyanbss"> <span class="person">Bvlck</span></a> & <a href="https://www.behance.net/israeladeniyi8"><span class="person">Israel </span></a></span>
             <span class="footer-text">Developed by <a href="https://github.com/Moyowaaaa"><span class="person">Moyowa</span></a></span>
         </div>
         <div class="footer-section__socials">
 
-            <div class="social-links">
+            <div class="social-links" ref="socialLinksRef">
   <!-- <img src="../assets/images/facebook.svg" class="social"/> -->
-  <img src="../assets/images/instagram.svg" class="social"/>
-            <img src="../assets/images/twitter.svg" class="social"/>
-            <img src="../assets/images/mail.svg" class="social" />
+  <img src="../assets/images/instagram.svg" class="social instagram"/>
+            <img src="../assets/images/twitter.svg" class="social twitter"/>
+            <img src="../assets/images/mail.svg" class="social mail" />
             </div>
 
             <div class="copyright">
@@ -59,7 +81,7 @@ button{
 }
 .footer-section {
     height: 50vh;
-    overflow-x: hidden;
+    overflow: hidden;
     display: flex;
     justify-content: space-evenly;
 

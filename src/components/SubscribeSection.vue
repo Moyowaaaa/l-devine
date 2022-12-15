@@ -1,3 +1,15 @@
+<script setup lang="ts">
+import {gsap} from 'gsap'
+import {ScrollTrigger} from 'gsap/ScrollTrigger'
+import { onMounted, ref } from 'vue';
+      gsap.registerPlugin(ScrollTrigger)
+
+
+      const heroRef = ref(null)
+
+    
+</script>
+
 <template>
     <div class="subscribe-section">
         <div class="subscribe-section__left">
@@ -5,7 +17,7 @@
             <div class="subscribe-section__left__image">
                 <!-- <img src="../assets/images/newsletterbackgroud.png" /> -->
             </div>
-            <div class="subscribe-section__left__hero">
+            <div class="subscribe-section__left__hero" ref="heroRef">
                 <p class="paragraph-normal paragraph">
                     “Don't be ashamed to weep; 'tis right to grieve. Tears are only water, and flowers, trees, and fruit cannot grow without water. But there must be sunlight also. A wounded heart will heal in time, and when it does, the memory and love of our lost ones is sealed inside to comfort us.”
                     <br/>
@@ -35,9 +47,7 @@
     </div>
 </template>
 
-<script setup lang="ts">
 
-</script>
 
 <style lang="scss" scoped>
 

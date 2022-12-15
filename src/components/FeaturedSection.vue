@@ -9,7 +9,7 @@ import { onMounted,ref } from 'vue';
       const featuredHeadText = ref<HTMLTitleElement | null>(null)
 
 
-      onMounted(() => {
+    //   onMounted(() => {
     //     let featuredTl = gsap.timeline({
     //         scrollTrigger:{
     //             trigger: featuredSection.value,
@@ -31,23 +31,23 @@ import { onMounted,ref } from 'vue';
         // y:400,
         // ease:"power3.inOut" })
 
-        let featuredSectionTl = gsap.timeline({
-            scrollTrigger:{
-                trigger: '.featured-section',
-                // scrub:0.2
+    //     let featuredSectionTl = gsap.timeline({
+    //         scrollTrigger:{
+    //             trigger: '.featured-section',
+    //             // scrub:0.2
    
 
-            }
-        })
+    //         }
+    //     })
 
-        featuredSectionTl.from('.featured-section', {
-            y:400,
-            duration:0.8,
-            opacity:0,
-            ease:"power3.inOut"
-        }, "<0.1")
+    //     featuredSectionTl.from('.featured-section', {
+    //         y:400,
+    //         duration:0.8,
+    //         opacity:0,
+    //         ease:"power3.inOut"
+    //     }, "<0.1")
 
-      })
+    //   })
 
 </script>
 

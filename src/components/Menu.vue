@@ -20,24 +20,13 @@ const {show, isOpen} = toRefs(navProps)
 
     console.log('menu',show.value)
 
-    watch(() => show, () => {
-        if(show.value) {
-            console.log('trueeee')
-        }else {
-            console.log('else')
-        }
-    })
-
-
 
 </script>
 
 
 <template>
-    <div class="menu" v-if="show">
-        <div class="menuIsOpen" v-if="show">
-            menuuu
-        </div>
+    <div class="menu">
+   
         <div class="menu__image"></div>
 
         <div class="menu__container">
