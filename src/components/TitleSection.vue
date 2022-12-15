@@ -140,7 +140,7 @@ function showMenu() {
     }
 
     &__image1{
-    background-image: url('~/assets/images/titlePic1.png');
+    background-image: url('@/assets/images/titlePic1.png');
     height: 100%;
     width: 8%;
     background-repeat: no-repeat;
@@ -149,7 +149,7 @@ function showMenu() {
 
 }
 &__image2{
-    background-image: url('~/assets/images/titlePic2.png');
+    background-image: url('@/assets/images/titlePic2.png');
     background-repeat: no-repeat;
     background-size: cover;
 
@@ -159,7 +159,7 @@ function showMenu() {
 
 }
 &__image3{
-    background-image: url('~/assets/images/titlePic3.png');
+    background-image: url('@/assets/images/titlePic3.png');
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
