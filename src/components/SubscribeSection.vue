@@ -163,6 +163,9 @@ $white:white;
 
         @media screen and (max-width:485px) {
             padding: 0.2rem 2rem; 
+            width:10rem;
+            margin:0 auto;
+            text-align: center;
         }
     }
 }

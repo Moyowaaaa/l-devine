@@ -36,6 +36,15 @@ const scrollToTop = () =>  {
             })
          
         })
+
+        let year = ref<any>()
+onMounted(()=> {
+    const date = new Date();
+   year.value = date.getFullYear()
+})
+
+
+
 </script>
 
 
@@ -56,7 +65,7 @@ const scrollToTop = () =>  {
 
             <div class="copyright">
 <img src="../assets/images/copyright.svg" />
-<div class="footer-text-small">2022. All right reserved</div>
+<div class="footer-text-small"><span>{{ year }}</span> All right reserved</div>
             </div>
           
         </div>

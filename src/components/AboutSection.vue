@@ -98,11 +98,14 @@ Amet natoque molestie sed semper. Elementum phasellus purus, phasellus augue ris
 
     p{
         text-align: right;
+        
+    }
 
-        @media screen and (max-width:485px) {
-       
-            text-align: left;
-        }
+    @media screen and (max-width:485px) {
+ 
+            display: none;
+        
+           
     }
 }
 
@@ -139,11 +142,30 @@ background-size: cover;
     text-align: justify;
 }
 
+@media screen and (max-width:485px) {
+
+&__container{
+
+    text-align:left;
+        width:40rem ;
+        padding:0.2rem;
+        margin: 0 auto;
+    }
+}
+
 
 .title{
     color: white;
     text-align: center;
     
 }
+@media screen and (max-width:485px) {
+    .title{
+        text-align: left;
+    }
 }
+
+}
+
+
 </style>
