@@ -25,7 +25,7 @@ import { ref, onMounted } from 'vue';
 import cinzelFont from '../assets/fonts/Cinzel-Bold.otf'
 import cormorantFont from '../assets/fonts/Cormorant-Medium.otf'
 import titlePic1 from '../assets/images/titlepic1.png'
-import titlePic2 from '../assets/images/titlepic2.png'
+import titlePic2 from '../assets/images/titlePic2.png'
 import titlePic3 from '../assets/images/titlepic3.png'
 
 const isLoaded = ref<boolean>(false)
