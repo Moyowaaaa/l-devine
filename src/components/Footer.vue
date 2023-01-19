@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import {gsap} from 'gsap'
 import {ScrollTrigger} from 'gsap/ScrollTrigger'
-import { onMounted, ref } from 'vue';
+import { onMounted, ref, inject } from 'vue';
       gsap.registerPlugin(ScrollTrigger)
+
+      const isLoaded = inject('isLoaded')
       
 
      
@@ -49,7 +51,7 @@ onMounted(()=> {
 
 
 <template>
-    <div class="footer-section" id="contact">
+    <div class="footer-section" id="contact" v-if="isLoaded">
         <div class="footer-section__credits" ref="creditsRef">
             <span class="footer-text">Designed by <a href="https://www.behance.net/adesiyanbss"> <span class="person">Bvlck</span></a> & <a href="https://www.behance.net/israeladeniyi8"><span class="person">Israel </span></a></span>
             <span class="footer-text">Developed by <a href="https://github.com/Moyowaaaa"><span class="person">Moyowa</span></a></span>

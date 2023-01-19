@@ -8,7 +8,7 @@
     <FeaturedSection />
       <ShowcaseSection/> 
     <SubscribeSection />
-       
+    
     </div>
     
   
@@ -21,7 +21,7 @@ import ShowcaseSection from '../components/ShowcaseSection.vue'
 import SubscribeSection from '../components/SubscribeSection.vue'
 import AboutSection from '../components/AboutSection.vue'
 import FeaturedSection from '../components/FeaturedSection.vue'
-import { ref, onMounted } from 'vue';
+import { ref, onMounted,provide } from 'vue';
 import cinzelFont from '../assets/fonts/Cinzel-Bold.otf'
 import cormorantFont from '../assets/fonts/Cormorant-Medium.otf'
 import titlePic1 from '../assets/images/titlepic1.png'
@@ -53,8 +53,13 @@ onMounted(() => {
     })
     Promise.all(promises).then(() => {
         isLoaded.value = true
+     
     })
 })
+
+provide('isLoaded',isLoaded)
+
+
 
 
 </script>
