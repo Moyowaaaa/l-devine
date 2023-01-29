@@ -7,47 +7,47 @@ import { onMounted,ref } from 'vue';
 
       const featuredSection = ref<HTMLDivElement | null>(null)
       const featuredHeadText = ref<HTMLTitleElement | null>(null)
+      const featuredContainer = ref<HTMLDivElement | null>(null)
+     
 
 
-    //   onMounted(() => {
-    //     let featuredTl = gsap.timeline({
-    //         scrollTrigger:{
-    //             trigger: featuredSection.value,
-    //             start: "top center", // when the top of the trigger hits the top of the viewport
-    //   end: "+=50",
-    //             markers:true,
-    //             scrub:true
-    //         }
-    //     })
+      onMounted(() => {
+        let featuredTl = gsap.timeline({
+            scrollTrigger:{
+                trigger: featuredSection.value,
+                start: 'top center',
+            end:'top +=10',
+         
+                scrub:true
+            }
+        })
 
-    //     featuredTl.from(featuredSection.value, {
-    //         opacity:0,
-    //         y:400,
-    //         ease:"powert3.inOut"
-    //     })
-    //     featuredTl.fromTo(featuredHeadText.value,{y: 0, opacity: 0, }, { opacity:1, clipPath: "polygon(0 100%, 100% 100%, 100% 0, 0 0)", delay:0.8}, "<0.3");;
-        // featuredTl.from(featuredSection.value, { opacity:0,
-        // delay:1.2,
-        // y:400,
-        // ease:"power3.inOut" })
+        let featuredTL2 = gsap.timeline({
+            scrollTrigger:{
+                trigger:featuredSection.value,
+                start: 'top center',
+            end:'top +=10',
+            }
+        })
 
-    //     let featuredSectionTl = gsap.timeline({
-    //         scrollTrigger:{
-    //             trigger: '.featured-section',
-    //             // scrub:0.2
-   
+        featuredTl.fromTo(featuredHeadText.value,{ opacity: 0, scaleX: 1,  },
+    {
+      y: 0,
+      opacity: 1,
+      duration: 1.5,
+      clipPath: "polygon(0 100%, 100% 100%, 100% 0, 0 0)",
+    // scaleX: 1, 
+    z: -500
+    });
+    featuredTL2.from('.featured-section__container', {
+        stagger: .6,
+        duration:4,
+        y:"200px",
+        opacity:0,
+        ease:"power3.inOut"
+    })
 
-    //         }
-    //     })
-
-    //     featuredSectionTl.from('.featured-section', {
-    //         y:400,
-    //         duration:0.8,
-    //         opacity:0,
-    //         ease:"power3.inOut"
-    //     }, "<0.1")
-
-    //   })
+      })
 
 </script>
 
@@ -57,7 +57,7 @@ import { onMounted,ref } from 'vue';
         <div class="featured-section__maincontainer" ref="featuredSection">
             <h1 class="title-bold title" ref="featuredHeadText">Featured</h1>
 
-            <div class="featured-section__container">
+            <div class="featured-section__container" ref="featuredContainer">
                 <div class="featured-section__featuredCard">
                     <img src="../assets/images/featuredPic1.svg" />
 

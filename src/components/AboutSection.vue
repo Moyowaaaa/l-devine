@@ -1,3 +1,39 @@
+<script setup lang="ts">
+import { gsap } from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
+import { onMounted } from 'vue';
+gsap.registerPlugin(ScrollTrigger)
+
+onMounted(() => {
+    let aboutTL = gsap.timeline({
+        scrollTrigger: {
+            trigger:".about-section",
+            start: 'top center',
+            end:'top +=30',
+          
+            scrub:0.1
+        }
+    })
+
+    aboutTL.fromTo(
+    ".about-section_herosection",
+    { opacity: 0,scaleX:0.8 },
+    {
+      y: 0,
+      opacity: 1,
+      duration: 1.5,
+    //   clipPath: "polygon(0 100%, 100% 100%, 100% 0, 0 0)",
+    scaleX: 1, 
+    z: -500
+    },
+    "<0.1"
+  );
+})
+
+
+</script>
+
+
 <template>
     <div class="about-section" id="about">
         <div class="about-section__top-section">
@@ -42,10 +78,6 @@ Amet natoque molestie sed semper. Elementum phasellus purus, phasellus augue ris
         
     </div>
 </template>
-
-<script setup lang="ts">
-
-</script>
 
 <style lang="scss" scoped>
 .about-section{

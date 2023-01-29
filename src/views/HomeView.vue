@@ -8,7 +8,7 @@
     <FeaturedSection />
       <ShowcaseSection/> 
     <SubscribeSection />
-    
+    <Footer />
     </div>
     
   
@@ -27,6 +27,7 @@ import cormorantFont from '../assets/fonts/Cormorant-Medium.otf'
 import titlePic1 from '../assets/images/titlepic1.png'
 import titlePic2 from '../assets/images/titlePic2.png'
 import titlePic3 from '../assets/images/titlepic3.png'
+import Footer from '@/components/Footer.vue';
 
 const isLoaded = ref<boolean>(false)
 const assets = ref([

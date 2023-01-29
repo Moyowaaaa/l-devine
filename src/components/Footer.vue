@@ -1,15 +1,9 @@
 <script setup lang="ts">
 import {gsap} from 'gsap'
 import {ScrollTrigger} from 'gsap/ScrollTrigger'
-import { onMounted, ref, inject } from 'vue';
-      gsap.registerPlugin(ScrollTrigger)
-
-      const isLoaded = inject('isLoaded')
-      
-
-     
-
-
+import { onMounted, ref, inject,onUnmounted } from 'vue';
+gsap.registerPlugin(ScrollTrigger)
+const isLoaded = inject('isLoaded')
 const scrollToTop = () =>  {
             window.scrollTo({
                 top:0,
@@ -17,33 +11,14 @@ const scrollToTop = () =>  {
             })
         }
 
-        const creditsRef = ref(null)
-        
-
-
-        onMounted(() => {
-            const tl = gsap.timeline()
-            tl.fromTo(creditsRef.value,  {y: 0, opacity: 0, }, { opacity:1,duration:3.2, clipPath: "polygon(0 100%, 100% 100%, 100% 0, 0 0)"}, "<0.1");;
-            tl.from('.instagram',{
-                y:200, opacity:0,
-                 ease:"power3.inOut", stagger:0.4
-            })
-            tl.from('.twitter',{
-                y:200, opacity:0,
-                 ease:"power3.inOut", stagger:0.6
-            })
-            tl.from('.mail',{
-                y:200, opacity:0,
-                 ease:"power3.inOut", stagger:0.8
-            })
-         
-        })
+      
 
         let year = ref<any>()
 onMounted(()=> {
     const date = new Date();
    year.value = date.getFullYear()
 })
+
 
 
 
