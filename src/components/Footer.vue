@@ -35,13 +35,13 @@ onMounted(()=> {
 
             <div class="social-links" ref="socialLinksRef">
   <!-- <img src="../assets/images/facebook.svg" class="social"/> -->
-  <img src="../assets/images/instagram.svg" class="social instagram"/>
-            <img src="../assets/images/twitter.svg" class="social twitter"/>
-            <img src="../assets/images/mail.svg" class="social mail" />
+  <img src="../assets/images/instagram.svg" class="social instagram"  alt="instagram"/>
+            <img src="../assets/images/twitter.svg" class="social twitter"  alt="facebook"/>
+            <img src="../assets/images/mail.svg" class="social mail"  alt="twitter"/>
             </div>
 
             <div class="copyright">
-<img src="../assets/images/copyright.svg" />
+<img src="../assets/images/copyright.svg" alt="copyright"/>
 <div class="footer-text-small"><span>{{ year }}</span> All right reserved</div>
             </div>
           

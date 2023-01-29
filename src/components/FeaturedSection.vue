@@ -59,7 +59,7 @@ import { onMounted,ref } from 'vue';
 
             <div class="featured-section__container" ref="featuredContainer">
                 <div class="featured-section__featuredCard">
-                    <img src="../assets/images/featuredPic1.svg" />
+                    <img src="../assets/images/featuredPic1.svg"  alt=""/>
 
                     <div class="featuredCard-hero">
                         <p class="paragraph-bold">Wedding collection</p>
@@ -68,7 +68,7 @@ import { onMounted,ref } from 'vue';
                 </div>  
 
                 <div class="featured-section__featuredCard">
-                    <img src="../assets/images/featuredPic2.svg" />
+                    <img src="../assets/images/featuredPic2.svg" alt=""/>
 
                     <div class="featuredCard-hero">
                         <p class="paragraph-bold">Party collection</p>
@@ -78,7 +78,7 @@ import { onMounted,ref } from 'vue';
 
 
                 <div class="featured-section__featuredCard">
-                    <img src="../assets/images/featuredPic3.svg" />
+                    <img src="../assets/images/featuredPic3.svg" alt=""/>
 
                     <div class="featuredCard-hero">
                         <p class="paragraph-bold">Custom makes</p>
@@ -93,9 +93,9 @@ import { onMounted,ref } from 'vue';
             </div>
 
             <div class="featured-section__pagination">
-                <img src="../assets/images/smallelipse.svg" />
-                <img src="../assets/images/largeelipse.svg" />
-                <img src="../assets/images/smallelipse.svg" />
+                <img src="../assets/images/smallelipse.svg" alt=""/>
+                <img src="../assets/images/largeelipse.svg" alt=""/>
+                <img src="../assets/images/smallelipse.svg" alt=""/>
             </div>
             </div>  
     </div>

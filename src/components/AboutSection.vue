@@ -38,7 +38,7 @@ onMounted(() => {
     <div class="about-section" id="about">
         <div class="about-section__top-section">
             <div class="about-section__top-section__left">
-        <img src="../assets/images/afterTitle1.png" />
+        <img src="../assets/images/afterTitle1.png" alt=""/>
         </div>
         <div class="about-section__top-section__right">
             <div class="about-section_herosection">
